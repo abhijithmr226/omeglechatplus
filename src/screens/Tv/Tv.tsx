@@ -2,7 +2,7 @@
 
 import { AlertTriangleIcon } from "lucide-react";
 import React, { useState } from "react";
-import { VideoChat } from "@/components/VideoChat";
+import VideoChat from "@/components/VideoChat";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
