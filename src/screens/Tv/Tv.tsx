@@ -1,13 +1,11 @@
-// src/screens/Tv/Tv.tsx
-
-import { AlertTriangleIcon } from "lucide-react";
+import { AlertTriangle01Icon } from "@hugeicons/react";
 import React, { useState } from "react";
-import VideoChat from "@/components/VideoChat";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { useWebRTC } from "@/hooks/useWebRTC";
+import VideoChat from "../../components/VideoChat";
+import { Alert, AlertDescription } from "../../components/ui/alert";
+import { Button } from "../../components/ui/button";
+import { Card, CardContent } from "../../components/ui/card";
+import { Input } from "../../components/ui/input";
+import { useWebRTC } from "../../hooks/useWebRTC";
 
 const Tv = (): JSX.Element => {
   const [interests, setInterests] = useState<string>("");
@@ -38,16 +36,14 @@ const Tv = (): JSX.Element => {
   }
 
   return (
-    <div className="bg-white flex flex-row justify-center w-full min-h-screen">
-      <div className="bg-white w-full max-w-[1280px] min-h-[720px]">
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-row justify-center w-full min-h-screen">
+      <div className="w-full max-w-[1280px] min-h-[720px]">
         <div className="relative min-h-[684px]">
           {/* Header */}
-          <div className="absolute w-full h-[132px] top-0 left-0 bg-white shadow-[-6px_-16px_26.9px_2px_#000000] flex justify-center items-center">
-            <img
-              className="w-80 h-[66px] object-cover"
-              alt="Omegle logo"
-              src="/omegle-logo.png"
-            />
+          <div className="absolute w-full h-[132px] top-0 left-0 bg-white shadow-lg flex justify-center items-center">
+            <div className="text-4xl font-bold text-blue-600">
+              Omegle Clone
+            </div>
           </div>
 
           {/* Online count */}
@@ -58,42 +54,40 @@ const Tv = (): JSX.Element => {
           </div>
 
           {/* Tagline */}
-          <div className="absolute w-[182px] top-[92px] right-[200px] font-['Marck_Script',Helvetica] text-black text-xl whitespace-nowrap">
+          <div className="absolute w-[182px] top-[92px] right-[200px] font-script text-black text-xl whitespace-nowrap">
             Talk to strangers!
           </div>
 
           {/* Card */}
-          <Card className="absolute w-[860px] h-[520px] top-[164px] left-1/2 transform -translate-x-1/2 shadow-[14px_-7px_119.8px_-49px_#000000]">
+          <Card className="absolute w-[860px] h-[520px] top-[164px] left-1/2 transform -translate-x-1/2 shadow-2xl bg-white">
             <CardContent className="p-0 h-full relative">
-              <img
-                className="w-[425px] h-[339px] mx-auto mt-6 object-cover"
-                alt="Abstract indian flag"
-                src="/abstract-indian-flag-png-free-download---3890x2779-1.png"
-              />
+              <div className="w-[425px] h-[339px] mx-auto mt-6 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
+                <div className="text-white text-6xl font-bold">🌐</div>
+              </div>
 
-              <div className="absolute top-[348px] left-[370px] font-medium text-sm text-center">
-                Omegle (oh·meg·ull) is a great way to meet new friends. When you use Omegle, <br />
+              <div className="absolute top-[348px] left-[370px] font-medium text-sm text-center text-gray-700">
+                Omegle Clone is a great way to meet new friends. When you use our service, <br />
                 you are paired randomly with another person to talk one-on-one. If you prefer,
                 you can add your interests <br />
                 and you'll be randomly paired with someone who selected some of the same interests.
               </div>
 
               <Alert className="absolute w-[443px] h-[49px] top-[417px] left-[485px] flex items-center bg-[#e6f7ff] border-[#91d5ff]">
-                <AlertTriangleIcon className="h-6 w-6 text-amber-500" />
+                <AlertTriangle01Icon className="h-6 w-6 text-amber-500" />
                 <AlertDescription className="ml-2 font-bold text-xl">
-                  The Video is Monitored. Keep it Clean
+                  Video is Monitored. Keep it Clean
                 </AlertDescription>
               </Alert>
 
               {/* Interests */}
               <div className="absolute top-[486px] left-[448px] font-bold text-sm">
-                What do you wanna talk about ??
+                What do you wanna talk about?
               </div>
 
               <div className="absolute w-[251px] h-[25px] top-[511px] left-[435px]">
                 <Input
-                  className="h-[25px] bg-[#f0f0f0] shadow-[2px_0px_4px_#00000040] text-sm font-semibold"
-                  placeholder="Add your Interests (optional)"
+                  className="h-[25px] bg-[#f0f0f0] shadow-md text-sm font-semibold"
+                  placeholder="Add your interests (optional)"
                   value={interests}
                   onChange={(e) => setInterests(e.target.value)}
                 />
@@ -106,14 +100,14 @@ const Tv = (): JSX.Element => {
 
               <div className="absolute top-[512px] left-[764px] flex space-x-2">
                 <Button
-                  className="w-[111px] h-[42px] bg-[#3fa0ff] hover:bg-[#3590e8] rounded-md transition-all duration-200 transform hover:scale-105"
+                  className="w-[111px] h-[42px] bg-[#3fa0ff] hover:bg-[#3590e8] rounded-md transition-all duration-200 transform hover:scale-105 shadow-lg"
                   onClick={() => handleStartChat('text')}
                 >
                   <span className="font-black text-white text-xl">Text</span>
                 </Button>
 
                 <Button
-                  className="w-[111px] h-[42px] bg-[#3fa0ff] hover:bg-[#3590e8] rounded-md transition-all duration-200 transform hover:scale-105"
+                  className="w-[111px] h-[42px] bg-[#3fa0ff] hover:bg-[#3590e8] rounded-md transition-all duration-200 transform hover:scale-105 shadow-lg"
                   onClick={() => handleStartChat('video')}
                 >
                   <span className="font-black text-white text-xl">Video</span>
@@ -127,4 +121,4 @@ const Tv = (): JSX.Element => {
   );
 };
 
-export default Tv;
+export { Tv };
